@@ -1,0 +1,49 @@
+/*
+ * @Description: css
+ * @version: 1.0
+ * @Author: Hotobun
+ * @Date: 2020-02-21
+ * @Remember to eat on time
+ * 部分复制自 tedezarize.com 
+ */
+
+body {
+    position: absolute;
+    top: 20%;
+    bottom: 50%;
+    width: 97%;
+    text-align: center;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    font-size: 50px;
+}
+#rabbit_footer {
+    position: fixed;
+    bottom: 3%;
+    width: 40%;
+    text-align: center;
+    left: 30%;
+    right: 30%;
+} 
+div.rabbit {
+    width: 25%;
+    height: 10%;
+    float: left;
+}
+
+img {
+    border-radius: 200px;
+}
+
+img.rabbit_img {
+    width: 65%;
+}
+.circle {
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
