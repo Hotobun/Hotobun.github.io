@@ -5,7 +5,7 @@
 只是因为很有趣  
 * 天天座理世 [tedezarize.com](http://tedezarize.com) 
 * 保登心爱 [hotococoa.com](https://hotococoa.com/)   
-* 间桐纱路 [kirimasharo.com](https://kirimasharo.com/)   
+* 桐间纱路 [kirimasharo.com](https://kirimasharo.com/)   
 * 宇治松千夜 [ujimatsuchiya.com](https://ujimatsuchiya.com/)  
 * 香风智乃 [kafuuchino.com](http://kafuuchino.com/)  
  
