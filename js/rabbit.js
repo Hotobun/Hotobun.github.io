@@ -12,13 +12,14 @@ window.onload = function () {
     var busuanzi = true;
     var domain = window.location.host.replace("www.", ''); 
     var rabbit = {
+        // if language == zh-CN: imgsrc_cn else imgsrc
         "cocoa": {
             "cover": "#ff969a",
             "text": "＼お姉ちゃんに任せなさい .zZ／",
             "site": "hotococoa.com",
-            "imgsrc": "/img/cocoa.jpg",
-            "imghref": "https://hotobun.gitee.io/hexo",
-            "imgsrc_cn": "https://hotobun.gitee.io/hexo/img/rabbit/cocoa.jpg",
+            "imgsrc": "/img/cocoa.jpg", 
+            "imghref": "https://hotobun.gitee.io/hexo", 
+            "imgsrc_cn": "https://hotobun.gitee.io/hexo/img/rabbit/cocoa.jpg", 
             "access": 200
         },
         "chino": {

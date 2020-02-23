@@ -18,7 +18,7 @@
 需要Google-analytics 去backups文件夹取吧 我们都没用过...
  
 添加不蒜子访问量计数器  
-不需要的话可以在`rabbit.js`删除 
+不需要的话可以在`rabbit.js`修改   
 `var busuanzi = false;`  
 然后重新生成min文件 
 * pv 每访问一次+1
