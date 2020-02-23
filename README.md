@@ -3,16 +3,16 @@
 ## 起源 [tedezarize.com](http://tedezarize.com)
 
 只是因为很有趣  
-* 天天座理世 `tedezarize.com` 起源  
-* 保登心爱 `hotococoa.com` 已加入  
-* 间桐纱路 `kirimasharo.com` 已加入 
-* 宇治松千夜 `ujimatsuchiya.com` 已加入 
-* 香风智乃 `kafuuchino.com` 联系不上  
+* 天天座理世 [tedezarize.com](http://tedezarize.com) 
+* 保登心爱 [hotococoa.com](https://hotococoa.com/)   
+* 间桐纱路 [kirimasharo.com](https://kirimasharo.com/)   
+* 宇治松千夜 [ujimatsuchiya.com](https://ujimatsuchiya.com/)  
+* 香风智乃 [kafuuchino.com](http://kafuuchino.com/)  
  
 
 *** 
 ## 使用 
-看js源码可以打开rabbit_demo.js 
+看js源码可以打开`rabbit_demo.js`  
 页脚的图片顺序是按动画出场顺序  
  
 需要Google-analytics 去backups文件夹取吧 我们都没用过...
@@ -27,7 +27,7 @@
 如果你是上述域名持有者 可以直接部署 js会检测你的域名   
 `ico`文件夹下面对应的`<name>.ico`拿出来`index.html`同级目录  
 改名为`favicon.ico`  
-生成自`circle.py`有兴趣可以研究下  
+生成自`circle.py` 有兴趣可以研究下  
  
 CNAME自行修改
  
