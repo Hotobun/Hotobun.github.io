@@ -72,10 +72,10 @@ if __name__ == "__main__":
         exit()
     fig_size_inches = 0.7   # 图像尺寸 其实应该是两个值 我这里使用了等宽 0.7*0.7 
     fig_dpi = 70            # 每一英寸的像素个数
-    icodir = "img"
+    icodir = "ico"
     if not os.path.isdir(icodir):
         os.mkdir(icodir)
     for imgname in os.listdir("img"):
-        save_name = os.path.join(icodir,imgname.replace("jpg", "ico"))
+        save_name = os.path.join(icodir,imgname.replace("jpg", "ico").replace("png", "ico"))
         # :param img: dir
         main(os.path.join("img", imgname), show=False)
