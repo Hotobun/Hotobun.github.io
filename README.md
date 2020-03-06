@@ -1,15 +1,14 @@
 # Rabbit House
-
+ 
 ## 起源 [tedezarize.com](http://tedezarize.com)
-
+ 
 只是因为很有趣  
 * 天天座理世 [tedezarize.com](http://tedezarize.com) 
 * 保登心爱 [hotococoa.com](https://hotococoa.com/)   
 * 桐间纱路 [kirimasharo.com](https://kirimasharo.com/)   
 * 宇治松千夜 [ujimatsuchiya.com](https://ujimatsuchiya.com/)  
-* 香风智乃 [kafuuchino.com](http://kafuuchino.com/)  
+* 香风智乃 [kafuuchino.com](http://kafuuchino.com/)   
  
-
 *** 
 ## 使用 
 看js源码可以打开`rabbit_demo.js`  
@@ -29,6 +28,7 @@
 改名为`favicon.ico`  
 生成自`circle.py` 有兴趣可以研究下  
  
+`index.html` keywords自行修改
 CNAME自行修改
  
 *** 
