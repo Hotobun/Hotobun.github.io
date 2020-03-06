@@ -1,25 +1,27 @@
 /*
  * @Description: pass
- * @version: 1.0
+ * @version: 1.3
  * @Author: Hotobun
  * @Date: 2020-02-20
  * @Remember to eat on time
+ * @Update: 2020-3-07 
  */
 
 window.onload = function () {
     // Only the first three properties need to be modified
     // rabbit.user.imghref: Click the avatar to jump to the URL
     var busuanzi = true;
-    var domain = window.location.host.replace("www.", ''); 
+    var domain = window.location.host.replace("www.", '');
+    var create_circle = false;
     var rabbit = {
         // if language == zh-CN: imgsrc_cn else imgsrc
         "cocoa": {
             "cover": "#ff969a",
             "text": "＼お姉ちゃんに任せなさい .zZ／",
             "site": "hotococoa.com",
-            "imgsrc": "/img/cocoa.jpg", 
-            "imghref": "https://hotobun.gitee.io/hexo", 
-            "imgsrc_cn": "https://hotobun.gitee.io/hexo/img/rabbit/cocoa.jpg", 
+            "imgsrc": "/img/cocoa.jpg",
+            "imghref": "https://hotobun.gitee.io/hexo",
+            "imgsrc_cn": "https://hotobun.gitee.io/hexo/img/rabbit/cocoa.jpg",
             "access": 200
         },
         "chino": {
@@ -27,7 +29,7 @@ window.onload = function () {
             "text": "＼昨日酔拳を習いました!／",
             "site": "kafuuchino.com",
             "imgsrc": "/img/chino.jpg",
-            "imghref": "javascript:void(0)",
+            "imghref": "https://mzh.moegirl.org/%E9%A6%99%E9%A3%8E%E6%99%BA%E4%B9%83",
             "imgsrc_cn": "https://hotobun.gitee.io/hexo/img/rabbit/chino.jpg",
             "access": 200
         },
@@ -45,7 +47,7 @@ window.onload = function () {
             "text": "＼はい、こちら新作の黒曜を抱く桜華よ／",
             "site": "ujimatsuchiya.com",
             "imgsrc": "/img/chiya.jpg",
-            "imghref": "javascript:void(0)",
+            "imghref": "https://www.pinterest.com/wj15229563321/%E8%AF%B7%E9%97%AE%E6%82%A8%E4%BB%8A%E5%A4%A9%E8%A6%81%E6%9D%A5%E7%82%B9%E5%85%94%E5%AD%90%E5%90%97/?invite_code=33ce77965f8e4a068fb8fef806d02507&sender=709528253701960479",
             "imgsrc_cn": "https://hotobun.gitee.io/hexo/img/rabbit/chiya.jpg",
             "access": 200
         },
@@ -54,7 +56,7 @@ window.onload = function () {
             "text": "＼みんな～! 今日は私と遊んでくれてありがと～!／",
             "site": "kirimasharo.com",
             "imgsrc": "/img/sharo.jpg",
-            "imghref": "https://syaro.cn/",
+            "imghref": "https://kirimasharo.com/",
             "imgsrc_cn": "https://hotobun.gitee.io/hexo/img/rabbit/sharo.jpg",
             "access": 200
         },
@@ -82,8 +84,8 @@ window.onload = function () {
     }
     for (i in rabbit) {
         var img = document.createElement("img");
-        var a = document.createElement("a"); 
-        if (rabbit[i].site == domain) {
+        var a = document.createElement("a");
+        if (domain == rabbit[i].site) {
             site_flag = true;
             img.height = 250;
             img.width = 250;
@@ -102,6 +104,9 @@ window.onload = function () {
             img.src = iscn ? rabbit[i].imgsrc_cn : rabbit[i].imgsrc;
             img.alt = i;
             a.href = "http://" + rabbit[i].site;
+            if (i == "sharo") {
+                a.href = "https://kirimasharo.com/rabbit_house/"
+            }
             a.alt = i;
             a.target = "vieww_window";
             a.append(img);
@@ -109,14 +114,16 @@ window.onload = function () {
             div.className = 'rabbit';
             div.append(a);
             if (ispc) {
-                var circle = document.createElement('div');
-                circle.className = "circle";
-                if (rabbit[i].access == 200) {
-                    circle.style = "background-color: " + rabbit[i].cover + ";";
-                } else {
-                    circle.style = "";
+                if (create_circle) {
+                    var circle = document.createElement('div');
+                    circle.className = "circle";
+                    if (rabbit[i].access == 200) {
+                        circle.style = "background-color: " + rabbit[i].cover + ";";
+                    } else {
+                        circle.style = "";
+                    }
+                    div.append(circle);
                 }
-                div.append(circle);
             } else {
                 img.style = "width: 95%";
             }
@@ -130,23 +137,23 @@ window.onload = function () {
             document.getElementById("rabbit_footer").append(div)
         }
     }
-    if (site_flag==false){
+    if (site_flag == false) {
         alert("Your domain name is not in the target")
     }
-    if (busuanzi){
+    if (busuanzi) {
         var bszdiv = document.createElement("div");
         var s1 = document.createElement("span");
         var s2 = document.createElement("span");
-        s1.id="busuanzi_value_site_pv"
-        s2.id="busuanzi_value_site_uv"
+        s1.id = "busuanzi_value_site_pv"
+        s2.id = "busuanzi_value_site_uv"
         bszdiv.append(s1);
         bszdiv.append(s2);
-        bszdiv.className="count";
-        bszdiv.style="display: none;"
+        bszdiv.className = "count";
+        bszdiv.style = "display: none;"
         document.body.append(bszdiv);
         var bszs = document.createElement("script")
-        bszs.src="/js/busuanzi.pure.mini.js";
-        document.body.append(bszs);      
+        bszs.src = "/js/busuanzi.pure.mini.js";
+        document.body.append(bszs);
     }
     console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "https://github.com/Hotobun/Hotobun.github.io")
     console.log("Remember to eat on time!")
