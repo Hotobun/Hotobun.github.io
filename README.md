@@ -23,10 +23,8 @@
 * pv 每访问一次+1
 * uv 每一个用户只+1 
  
-如果你是上述域名持有者 可以直接部署 js会检测你的域名   
-`ico`文件夹下面对应的`<name>.ico`拿出来`index.html`同级目录  
-改名为`favicon.ico`  
-生成自`circle.py` 有兴趣可以研究下  
+如果你是上述域名持有者 可以直接部署 js会检测你的域名    
+`ico`生成自`circle.py` 有兴趣可以研究下  
  
 `index.html` keywords自行修改
 CNAME自行修改
