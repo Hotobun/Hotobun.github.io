@@ -14,8 +14,7 @@ window.onload = function () {
     // rabbit.user.imghref: Click the avatar to jump to the URL
     var busuanzi = true;
     var domain = window.location.host.replace("www.", '');
-    var create_circle = false;
-    domain = "kirimasharo.com"
+    var create_circle = false; 
     var rabbit = {
         // if language == zh-CN: imgsrc_cn else imgsrc
         "cocoa": {
