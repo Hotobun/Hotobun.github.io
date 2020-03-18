@@ -1,10 +1,12 @@
 /*
  * @Description: pass
- * @version: 1.3
+ * @version: 1.5
  * @Author: Hotobun
  * @Date: 2020-02-20
  * @Remember to eat on time
  * @Update: 2020-3-07 
+ * 
+ * 修改了cn 图床连接 
  */
 
 window.onload = function () {
@@ -13,6 +15,7 @@ window.onload = function () {
     var busuanzi = true;
     var domain = window.location.host.replace("www.", '');
     var create_circle = false;
+    domain = "kirimasharo.com"
     var rabbit = {
         // if language == zh-CN: imgsrc_cn else imgsrc
         "cocoa": {
@@ -20,9 +23,8 @@ window.onload = function () {
             "text": "＼お姉ちゃんに任せなさい .zZ／",
             "site": "hotococoa.com",
             "imgsrc": "/img/cocoa.jpg",
-            "imghref": "https://hotobun.gitee.io/hexo",
-            "imgsrc_cn": "https://hotobun.gitee.io/hexo/img/rabbit/cocoa.jpg",
-            "access": 200
+            "imghref": "https://hotobun.gitee.io",
+            "imgsrc_cn": "https://hotobun.gitee.io/img/rabbit/cocoa.jpg", 
         },
         "chino": {
             "cover": "#87CEFA",
@@ -30,8 +32,8 @@ window.onload = function () {
             "site": "kafuuchino.com",
             "imgsrc": "/img/chino.jpg",
             "imghref": "https://mzh.moegirl.org/%E9%A6%99%E9%A3%8E%E6%99%BA%E4%B9%83",
-            "imgsrc_cn": "https://hotobun.gitee.io/hexo/img/rabbit/chino.jpg",
-            "access": 200
+            "imgsrc_cn": "https://hotobun.gitee.io/img/rabbit/chino.jpg", 
+            "beian": "ICP：皖ICP备19005854号-1",     // 有备案号直接写 没有就不添加 
         },
         "rize": {
             "cover": "#895FB7",
@@ -39,17 +41,15 @@ window.onload = function () {
             "site": "tedezarize.com",
             "imgsrc": "/img/rize.jpg",
             "imghref": "https://twitter.com/sangou3",
-            "imgsrc_cn": "https://hotobun.gitee.io/hexo/img/rabbit/rize.jpg",
-            "access": 200
+            "imgsrc_cn": "https://hotobun.gitee.io/img/rabbit/rize.jpg", 
         },
         "chiya": {
             "cover": "#7db357",
             "text": "＼はい、こちら新作の黒曜を抱く桜華よ／",
             "site": "ujimatsuchiya.com",
             "imgsrc": "/img/chiya.jpg",
-            "imghref": "https://www.pinterest.com/wj15229563321/%E8%AF%B7%E9%97%AE%E6%82%A8%E4%BB%8A%E5%A4%A9%E8%A6%81%E6%9D%A5%E7%82%B9%E5%85%94%E5%AD%90%E5%90%97/?invite_code=33ce77965f8e4a068fb8fef806d02507&sender=709528253701960479",
-            "imgsrc_cn": "https://hotobun.gitee.io/hexo/img/rabbit/chiya.jpg",
-            "access": 200
+            "imghref": "https://pin.it/1UuITeg",
+            "imgsrc_cn": "https://hotobun.gitee.io/img/rabbit/chiya.jpg", 
         },
         "sharo": {
             "cover": "#F5D292",
@@ -57,8 +57,7 @@ window.onload = function () {
             "site": "kirimasharo.com",
             "imgsrc": "/img/sharo.jpg",
             "imghref": "https://kirimasharo.com/",
-            "imgsrc_cn": "https://hotobun.gitee.io/hexo/img/rabbit/sharo.jpg",
-            "access": 200
+            "imgsrc_cn": "https://hotobun.gitee.io/img/rabbit/sharo.jpg", 
         },
     }
 
@@ -86,6 +85,7 @@ window.onload = function () {
         var img = document.createElement("img");
         var a = document.createElement("a");
         if (domain == rabbit[i].site) {
+            var master = rabbit[i]
             site_flag = true;
             img.height = 250;
             img.width = 250;
@@ -99,6 +99,10 @@ window.onload = function () {
             document.getElementById("text").append(document.createTextNode(rabbit[i].text));
             document.title = i;
             document.body.style.background = rabbit[i].cover;
+            let icon = document.createElement("link")
+            icon.setAttribute("rel","icon")
+            icon.setAttribute("href","ico/"+domain.replace("com","ico"))
+            this.document.head.append(icon) 
         } else {
             img.className = "rabbit_img"
             img.src = iscn ? rabbit[i].imgsrc_cn : rabbit[i].imgsrc;
@@ -112,34 +116,32 @@ window.onload = function () {
             a.append(img);
             var div = document.createElement("div");
             div.className = 'rabbit';
-            div.append(a);
+            div.append(a); 
             if (ispc) {
                 if (create_circle) {
                     var circle = document.createElement('div');
-                    circle.className = "circle";
-                    if (rabbit[i].access == 200) {
-                        circle.style = "background-color: " + rabbit[i].cover + ";";
-                    } else {
-                        circle.style = "";
-                    }
+                    circle.className = "circle"; 
                     div.append(circle);
                 }
             } else {
                 img.style = "width: 95%";
-            }
-            if (rabbit[i].access != 200) {
-                a.href = "javascript:void(0)";
-                a.onclick = function () {
-                    alert("Domain not sold!")
-                }
-                a.target = '';
-            }
+            }  
             document.getElementById("rabbit_footer").append(div)
         }
     }
     if (site_flag == false) {
         alert("Your domain name is not in the target")
     }
+    // 备案 
+    if (master.beian){
+        this.console.log("master beian ", master)
+        let beian = this.document.createElement("a") 
+        beian.href="http://beian.miit.gov.cn/"
+        beian.text=master.beian 
+        beian.style="width: 100%;"
+        this.document.getElementById("rabbit_footer").append(beian)
+        this.document.getElementById("rabbit_footer").style="bottom: 0;"
+    }    
     if (busuanzi) {
         var bszdiv = document.createElement("div");
         var s1 = document.createElement("span");
@@ -152,7 +154,7 @@ window.onload = function () {
         bszdiv.style = "display: none;"
         document.body.append(bszdiv);
         var bszs = document.createElement("script")
-        bszs.src = "/js/busuanzi.pure.mini.js";
+        bszs.src = "js/busuanzi.pure.mini.js";
         document.body.append(bszs);
     }
     console.log("%c Github %c", "background:#24272A; color:#ffffff", "", "https://github.com/Hotobun/Hotobun.github.io")
